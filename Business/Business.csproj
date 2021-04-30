@@ -51,11 +51,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IContactService.cs" />
+    <Compile Include="Abstract\IAboutService.cs" />
     <Compile Include="Abstract\ICategoryService.cs" />
+    <Compile Include="Abstract\IContentService.cs" />
+    <Compile Include="Abstract\IHeadingService.cs" />
+    <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{6C63C747-FAC3-4EC3-8731-5DFC821B8FE5}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{611C9F5D-C64A-4FDF-868E-A8B10AFCA77C}</Project>
       <Name>DataAccess</Name>

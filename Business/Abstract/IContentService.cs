@@ -1,19 +1,19 @@
-﻿using Entity.Concrete;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using Entity.Concrete;
 
 namespace Business.Abstract
 {
-    public interface ICategoryService
+    public interface IContentService
     {
-        List<Category> GetAll();
-        void Add(Category category);
-        void Update(Category category);
-        void Delete(Category category);
+        List<Content> GetAll();
+        void Add(Content content);
+        void Update(Content content);
+        void Delete(Content content);
         List<Category> GetAll(Expression<Func<Category, bool>> filter);
     }
 }

@@ -2,42 +2,44 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using Business.Abstract;
 using DataAccess.Abstract;
-using DataAccess.Concrete.Repositories;
 using Entity.Concrete;
 
 namespace Business.Concrete
 {
-    public class CategoryManager
+    public class CategoryManager : ICategoryService
     {
-        private GenericRepository<Category> _genericRepository = new GenericRepository<Category>();
+        private ICategoryDal _categoryDal;
+
+        public CategoryManager(ICategoryDal categoryDal)
+        {
+            _categoryDal = categoryDal;
+        }
 
         public List<Category> GetAll()
         {
-          return _genericRepository.List();
+            return _categoryDal.List();
         }
 
         public void Add(Category category)
         {
-            _genericRepository.Add(category);
+            _categoryDal.Add(category);
         }
 
         public void Update(Category category)
         {
-            throw new NotImplementedException();
+            _categoryDal.Update(category);
         }
 
         public void Delete(Category category)
         {
-            throw new NotImplementedException();
+            _categoryDal.Delete(category);
         }
 
         public List<Category> List(Expression<Func<Category, bool>> filter)
         {
-            throw new NotImplementedException();
+            return _categoryDal.List(filter);
         }
     }
 }
