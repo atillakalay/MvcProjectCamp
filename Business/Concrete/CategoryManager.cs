@@ -37,7 +37,7 @@ namespace Business.Concrete
             _categoryDal.Delete(category);
         }
 
-        public List<Category> List(Expression<Func<Category, bool>> filter)
+        public List<Category> GetAll(Expression<Func<Category, bool>> filter)
         {
             return _categoryDal.List(filter);
         }

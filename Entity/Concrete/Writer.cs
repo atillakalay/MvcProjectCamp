@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Core.Entity;
 
 namespace Entity.Concrete
 {
-    public class Writer
+    public class Writer : IEntity
     {
         [Key]
         public int WriterId { get; set; }

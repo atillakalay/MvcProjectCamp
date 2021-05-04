@@ -1,9 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Core.Entity;
 
 
 namespace Entity.Concrete
 {
-    public class About
+    public class About : IEntity
     {
         [Key]
         public int AboutId { get; set; }

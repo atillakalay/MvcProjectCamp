@@ -1,12 +1,16 @@
-﻿using System.Web.Mvc;
+﻿
+using System.Web.Mvc;
 using Business.Concrete;
+using Business.ValidationRules.FluentValidation;
+using DataAccess.Concrete.EntityFramework;
 using Entity.Concrete;
+using FluentValidation.Results;
 
 namespace MvcProjectCamp.Controllers
 {
     public class CategoryController : Controller
     {
-        private CategoryManager _categoryManager = new CategoryManager();
+        private CategoryManager _categoryManager = new CategoryManager(new EfCategoryDal());
         // GET: Category
         public ActionResult Index()
         {
@@ -27,9 +31,21 @@ namespace MvcProjectCamp.Controllers
         [HttpPost]
         public ActionResult AddCategory(Category category)
         {
-            _categoryManager.Add(category);
-            return RedirectToAction("GetCategoryList");
-
+            CategoryValidator categoryValidator = new CategoryValidator();
+            ValidationResult result = categoryValidator.Validate(category);
+            if (result.IsValid)
+            {
+                _categoryManager.Add(category);
+                return RedirectToAction("GetCategoryList");
+            }
+            else
+            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                }
+            }
+            return View();
         }
     }
 }

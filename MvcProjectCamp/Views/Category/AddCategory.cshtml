@@ -1,10 +1,26 @@
-﻿
+﻿@model Entity.Concrete.Category
 @{
     Layout = null;
 }
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 <h2>Yeni Kategori</h2>
-<br/>
-<form method="post" class="form form-group">
-    <input type="text" placeholder="Kategori adı giriniz" class="form form-control"/>
-</form>
+<br />
+@using (Html.BeginForm("AddCategory", "Category", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Kategori adı")
+        @Html.TextBoxFor(x => x.CategoryName)
+        @Html.ValidationMessageFor(x => x.CategoryName)
+        <br /><br />
+        @Html.Label("Açıklamayı giriniz")
+        @Html.TextBoxFor(x => x.CategoryDescription)
+        @Html.ValidationMessageFor(x => x.CategoryDescription)
+        <br /><br />
+        <button class="btn btn-info">Kaydet</button>
+    </div>
+}
+
+
+@*<form method="post" class="form form-group">
+        <input type="text" placeholder="Kategori adı giriniz" class="form form-control"/>
+    </form>*@

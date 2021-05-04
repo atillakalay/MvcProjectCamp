@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Core.Entity;
 
 namespace Entity.Concrete
 {
-    public class Heading
+    public class Heading : IEntity
     {
         [Key]
         public int HeadingId { get; set; }
