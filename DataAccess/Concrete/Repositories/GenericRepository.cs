@@ -42,6 +42,11 @@ namespace DataAccess.Concrete.Repositories
             return _object.Where(filter).ToList();
         }
 
+        public T Get(Expression<Func<T, bool>> filter)
+        {
+            return _object.SingleOrDefault(filter);
+        }
+
         public void Update(T entity)
         {
             _efContext.SaveChanges();

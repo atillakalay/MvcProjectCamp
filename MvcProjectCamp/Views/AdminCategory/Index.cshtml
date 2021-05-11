@@ -23,8 +23,8 @@
             <td>@categories.CategoryName</td>
             <td>@categories.CategoryDescription</td>
             <td>@categories.CategoryStatus</td>
-            <td><a href="#" class="btn btn-warning">Düzenle</a></td>
-            <td><a href="#" class="btn btn-danger">Sil</a></td>
+            <td><a href="/AdminCategory/UpdateCategory/@categories.CategoryId" class="btn btn-warning">Düzenle</a></td>
+            <td><a href="/AdminCategory/DeleteCategory/@categories.CategoryId" class="btn btn-danger">Sil</a></td>
         </tr>
     }
 </table>

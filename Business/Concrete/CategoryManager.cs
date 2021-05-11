@@ -41,5 +41,10 @@ namespace Business.Concrete
         {
             return _categoryDal.List(filter);
         }
+
+        public Category GetById(int id)
+        {
+            return _categoryDal.Get(x => x.CategoryId == id);
+        }
     }
 }

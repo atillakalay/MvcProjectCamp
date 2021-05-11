@@ -15,5 +15,6 @@ namespace Business.Abstract
         void Update(Category category);
         void Delete(Category category);
         List<Category> GetAll(Expression<Func<Category, bool>> filter);
+        Category GetById(int id);
     }
 }
