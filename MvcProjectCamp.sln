@@ -13,6 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Busine
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{6C63C747-FAC3-4EC3-8731-5DFC821B8FE5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Screenshot", "Screenshot", "{5D06BEE6-7451-4D9A-B825-A4A5A1070AA9}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Desktop\Screen Shot 11.05.2021 at 16.12.png = ..\..\..\Desktop\Screen Shot 11.05.2021 at 16.12.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
