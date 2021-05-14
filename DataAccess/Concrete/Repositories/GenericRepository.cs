@@ -21,13 +21,15 @@ namespace DataAccess.Concrete.Repositories
 
         public void Add(T entity)
         {
-            _object.Add(entity);
+            var addEntity = _efContext.Entry(entity);
+            addEntity.State = EntityState.Added;
             _efContext.SaveChanges();
         }
 
         public void Delete(T entity)
         {
-            _object.Remove(entity);
+            var deleteEntity = _efContext.Entry(entity);
+            deleteEntity.State = EntityState.Deleted;
             _efContext.SaveChanges();
         }
 
@@ -49,6 +51,8 @@ namespace DataAccess.Concrete.Repositories
 
         public void Update(T entity)
         {
+            var updateEntity = _efContext.Entry(entity);
+            updateEntity.State = EntityState.Modified;
             _efContext.SaveChanges();
         }
     }
