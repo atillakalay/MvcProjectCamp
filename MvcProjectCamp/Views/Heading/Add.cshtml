@@ -1,0 +1,29 @@
+﻿@model Entity.Concrete.Heading
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Yazar Ekle</h2>
+<br />
+@using (Html.BeginForm("Add", "Heading", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Başlık Adı")
+        @Html.TextBoxFor(x => x.HeadingName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.HeadingName, null, new { @class = "text-danger" })
+        <br />
+        @Html.Label("Kategori Id")
+        @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.categoryVlc, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CategoryId)
+        <br />
+        @Html.Label("Yazar")
+        @Html.DropDownListFor(x => x.WriterId, (List<SelectListItem>)ViewBag.writerVlc, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.WriterId)
+        <br />
+
+        <button class="btn btn-info">Başlığı Oluştur</button>
+    </div>
+
+}
+
