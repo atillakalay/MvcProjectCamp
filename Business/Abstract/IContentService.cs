@@ -11,9 +11,9 @@ namespace Business.Abstract
     public interface IContentService
     {
         List<Content> GetAll();
+        List<Content> GetListById(int id);
         void Add(Content content);
         void Update(Content content);
         void Delete(Content content);
-        List<Category> GetAll(Expression<Func<Category, bool>> filter);
     }
 }

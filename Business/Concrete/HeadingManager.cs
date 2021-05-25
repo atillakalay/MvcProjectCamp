@@ -18,7 +18,7 @@ namespace Business.Concrete
 
         public Heading GetById(int id)
         {
-            return _headingDal.Get(x => x.CategoryId == id);
+            return _headingDal.Get(x => x.HeadingId == id);
         }
 
         public List<Heading> GetAll()
@@ -38,7 +38,7 @@ namespace Business.Concrete
 
         public void Delete(Heading heading)
         {
-            _headingDal.Delete(heading);
+            _headingDal.Update(heading);
         }
     }
 }

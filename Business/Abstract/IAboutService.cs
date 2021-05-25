@@ -14,6 +14,6 @@ namespace Business.Abstract
         void Add(About about);
         void Update(About about);
         void Delete(About about);
-        List<Category> GetAll(Expression<Func<Category, bool>> filter);
+        List<About> GetAll(Expression<Func<About, bool>> filter);
     }
 }

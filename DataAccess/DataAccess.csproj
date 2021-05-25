@@ -73,6 +73,22 @@
     <Compile Include="Migrations\202105201807553_migration_writertitle_add.designer.cs">
       <DependentUpon>202105201807553_migration_writertitle_add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105231144384_mig_imageSizeChange.cs" />
+    <Compile Include="Migrations\202105231144384_mig_imageSizeChange.designer.cs">
+      <DependentUpon>202105231144384_mig_imageSizeChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105231203112_mig_writerAddStatus.cs" />
+    <Compile Include="Migrations\202105231203112_mig_writerAddStatus.designer.cs">
+      <DependentUpon>202105231203112_mig_writerAddStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105251053424_mig_contentStatusAdd.cs" />
+    <Compile Include="Migrations\202105251053424_mig_contentStatusAdd.designer.cs">
+      <DependentUpon>202105251053424_mig_contentStatusAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105251057024_mig_headingStatusAdd.cs" />
+    <Compile Include="Migrations\202105251057024_mig_headingStatusAdd.designer.cs">
+      <DependentUpon>202105251057024_mig_headingStatusAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -96,6 +112,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105201807553_migration_writertitle_add.resx">
       <DependentUpon>202105201807553_migration_writertitle_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105231144384_mig_imageSizeChange.resx">
+      <DependentUpon>202105231144384_mig_imageSizeChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105231203112_mig_writerAddStatus.resx">
+      <DependentUpon>202105231203112_mig_writerAddStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105251053424_mig_contentStatusAdd.resx">
+      <DependentUpon>202105251053424_mig_contentStatusAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105251057024_mig_headingStatusAdd.resx">
+      <DependentUpon>202105251057024_mig_headingStatusAdd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
