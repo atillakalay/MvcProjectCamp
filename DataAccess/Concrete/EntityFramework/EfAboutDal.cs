@@ -9,7 +9,7 @@ using Entity.Concrete;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    class EfAboutDal : GenericRepository<About>, IAboutDal
+  public  class EfAboutDal : GenericRepository<About>, IAboutDal
     {
     }
 }

@@ -19,12 +19,17 @@ namespace Business.Concrete
 
         public List<About> GetAll()
         {
-        return    _aboutDal.List();
+            return _aboutDal.List();
+        }
+
+        public About GetById(int id)
+        {
+            return _aboutDal.Get(x => x.AboutId == id);
         }
 
         public void Add(About about)
         {
-     _aboutDal.Add(about);
+            _aboutDal.Add(about);
         }
 
         public void Update(About about)
@@ -34,7 +39,7 @@ namespace Business.Concrete
 
         public void Delete(About about)
         {
-           _aboutDal.Delete(about);
+            _aboutDal.Delete(about);
         }
 
         public List<About> GetAll(Expression<Func<About, bool>> filter)

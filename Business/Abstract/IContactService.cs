@@ -5,12 +5,12 @@ using Entity.Concrete;
 
 namespace Business.Abstract
 {
- public   interface IContactService
+    public interface IContactService
     {
-        List<About> GetAll();
-        void Add(About about);
-        void Update(About about);
-        void Delete(About about);
-        List<Contact> GetAll(Expression<Func<Contact, bool>> filter);
+        List<Contact> GetAll();
+        Contact GetById(int id);
+        void Add(Contact contact);
+        void Update(Contact contact);
+        void Delete(Contact contact);
     }
 }
