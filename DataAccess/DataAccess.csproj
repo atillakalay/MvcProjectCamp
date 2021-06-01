@@ -56,6 +56,7 @@
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
+    <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfAboutDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Concrete\EntityFramework\EfContentDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfContext.cs" />
     <Compile Include="Concrete\EntityFramework\EfHeadingDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfMessageDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfWriterDal.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="Migrations\202105142148283_mig_writer_edit.cs" />
@@ -88,6 +90,10 @@
     <Compile Include="Migrations\202105251057024_mig_headingStatusAdd.cs" />
     <Compile Include="Migrations\202105251057024_mig_headingStatusAdd.designer.cs">
       <DependentUpon>202105251057024_mig_headingStatusAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106010944088_mig_addMessageClass.cs" />
+    <Compile Include="Migrations\202106010944088_mig_addMessageClass.designer.cs">
+      <DependentUpon>202106010944088_mig_addMessageClass.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105251057024_mig_headingStatusAdd.resx">
       <DependentUpon>202105251057024_mig_headingStatusAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106010944088_mig_addMessageClass.resx">
+      <DependentUpon>202106010944088_mig_addMessageClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
