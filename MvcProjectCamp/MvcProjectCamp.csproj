@@ -134,6 +134,8 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContentController.cs" />
+    <Compile Include="Controllers\ErrorPageController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HeadingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
@@ -146,6 +148,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminLTE-3.0.4\.gitignore" />
+    <Content Include="AdminLTE-3.0.4\another-403-forbidden-pen\dist\index.html" />
+    <Content Include="AdminLTE-3.0.4\another-403-forbidden-pen\dist\script.js" />
+    <Content Include="AdminLTE-3.0.4\another-403-forbidden-pen\dist\style.css" />
+    <Content Include="AdminLTE-3.0.4\another-403-forbidden-pen\license.txt" />
+    <Content Include="AdminLTE-3.0.4\another-403-forbidden-pen\src\index.html" />
+    <Content Include="AdminLTE-3.0.4\another-403-forbidden-pen\src\script.js" />
+    <Content Include="AdminLTE-3.0.4\another-403-forbidden-pen\src\style.css" />
     <Content Include="AdminLTE-3.0.4\build\config\postcss.config.js" />
     <Content Include="AdminLTE-3.0.4\build\config\rollup.config.js" />
     <Content Include="AdminLTE-3.0.4\build\js\AdminLTE.js" />
@@ -164,6 +173,10 @@
     <Content Include="AdminLTE-3.0.4\build\npm\DocsPublish.js" />
     <Content Include="AdminLTE-3.0.4\build\npm\Plugins.js" />
     <Content Include="AdminLTE-3.0.4\build\npm\Publish.js" />
+    <Content Include="AdminLTE-3.0.4\colorlib-error-404-10\css\style.css" />
+    <Content Include="AdminLTE-3.0.4\colorlib-error-404-10\img\bg.jpg" />
+    <Content Include="AdminLTE-3.0.4\colorlib-error-404-10\index.html" />
+    <Content Include="AdminLTE-3.0.4\colorlib-error-404-10\readme.txt" />
     <Content Include="AdminLTE-3.0.4\dist\css\adminlte.css" />
     <Content Include="AdminLTE-3.0.4\dist\css\adminlte.min.css" />
     <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.components.css" />
@@ -1505,6 +1518,7 @@
     <Content Include="AdminLTE-3.0.4\plugins\summernote\summernote-lite.min.js.map" />
     <Content Include="AdminLTE-3.0.4\plugins\summernote\summernote.js.map" />
     <Content Include="AdminLTE-3.0.4\plugins\summernote\summernote.min.js.map" />
+    <Content Include="AdminLTE-3.0.4\another-403-forbidden-pen\README.markdown" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -1634,6 +1648,11 @@
     <Content Include="Views\Message\Inbox.cshtml" />
     <Content Include="Views\Message\SendBox.cshtml" />
     <Content Include="Views\Message\NewMessage.cshtml" />
+    <Content Include="Views\Message\GetInBoxMessageDetails.cshtml" />
+    <Content Include="Views\Message\GetSendBoxMessageDetails.cshtml" />
+    <Content Include="Views\ErrorPage\Page404.cshtml" />
+    <Content Include="Views\ErrorPage\Page403.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
