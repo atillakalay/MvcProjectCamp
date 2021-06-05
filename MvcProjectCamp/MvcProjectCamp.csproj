@@ -1644,7 +1644,6 @@
     <Content Include="Views\About\AboutPartial.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Contact\GetContactDetails.cshtml" />
-    <Content Include="Views\Contact\ContactMenu.cshtml" />
     <Content Include="Views\Message\Inbox.cshtml" />
     <Content Include="Views\Message\SendBox.cshtml" />
     <Content Include="Views\Message\NewMessage.cshtml" />
@@ -1653,6 +1652,9 @@
     <Content Include="Views\ErrorPage\Page404.cshtml" />
     <Content Include="Views\ErrorPage\Page403.cshtml" />
     <Content Include="Views\Gallery\Index.cshtml" />
+    <Content Include="Views\Message\Draft.cshtml" />
+    <Content Include="Views\Message\GetDraftMessageDetails.cshtml" />
+    <Content Include="Views\Contact\ContactSideBarPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

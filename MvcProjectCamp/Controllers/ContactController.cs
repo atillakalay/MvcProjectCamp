@@ -12,6 +12,7 @@ namespace MvcProjectCamp.Controllers
     public class ContactController : Controller
     {
         // GET: Contact
+        private MessageManager _messageManager = new MessageManager(new EfMessageDal());
         private ContactManager _contactManager = new ContactManager(new EfContactDal());
         private ContactValidator contactValidator = new ContactValidator();
         public ActionResult Index()
@@ -25,9 +26,18 @@ namespace MvcProjectCamp.Controllers
             var result = _contactManager.GetById(id);
             return View(result);
         }
-
-        public PartialViewResult ContactMenu()
+        public PartialViewResult ContactSideBarPartial()
         {
+            var contactList = _contactManager.GetAll();
+            ViewBag.contactCount = contactList.Count();
+            var listResult = _messageManager.GetListSendbox();
+            var sendList = listResult.FindAll(x => x.isDraft == false);
+            ViewBag.sendCount = sendList.Count();
+            var listResult2 = _messageManager.GetListInbox();
+            ViewBag.inboxCount = listResult2.Count();
+
+            var drafList = listResult.FindAll(x => x.isDraft == true);
+            ViewBag.draftCount = drafList.Count();
             return PartialView();
         }
     }

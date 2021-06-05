@@ -20,5 +20,6 @@ namespace Entity.Concrete
         public string MessageContent { get; set; }
 
         public DateTime MessageDate { get; set; }
+        public bool isDraft { get; set; }
     }
 }

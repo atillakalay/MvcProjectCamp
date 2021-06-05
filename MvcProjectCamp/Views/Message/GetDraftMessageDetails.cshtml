@@ -6,49 +6,57 @@
 
 <!DOCTYPE html>
 <html>
+
 <body class="hold-transition sidebar-mini">
+    <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Gönderilen Mesajlar</h1>
+                    <h1>Gelen Mesaj Detayları</h1>
                 </div>
+
             </div>
-        </div>
+        </div><!-- /.container-fluid -->
     </section>
+    <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
             <div class="row">
                 @Html.Action("ContactSideBarPartial", "Contact")
+                <!-- /.col -->
                 <div class="col-md-9">
                     <div class="card card-primary card-outline">
                         <div class="card-header">
                             <h3 class="card-title">Mesajı Oku</h3>
-                            <div class="card-tools">
-                                <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Previous"><i class="fas fa-chevron-left"></i></a>
-                                <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Next"><i class="fas fa-chevron-right"></i></a>
-                            </div>
                         </div>
-
-
+                        <!-- /.card-header -->
                         <div class="card-body p-0">
                             <div class="mailbox-read-info">
-                                <h5>Konu : @Html.DisplayFor(x => x.Subject)</h5>
-
-
+                                <h5>Konu: @Html.DisplayFor(x => x.Subject)</h5>
+                                <br />
                                 <h6>
-                                    Kime : @Html.DisplayFor(x => x.ReceiverMail)
-                                    <span class="mailbox-read-time float-right">  @Model.MessageDate.ToString("dd-MMM-yyyy")</span>
+                                    Alıcı: @Html.DisplayFor(x => x.ReceiverMail)
+                                    <span class="mailbox-read-time float-right">
+                                        @Model.MessageDate.ToString("dd-MMM-yyyy")
+                                    </span>
                                 </h6>
-
                             </div>
+                            <!-- /.mailbox-read-info -->
+                            <!-- /.mailbox-controls -->
                             <div class="mailbox-read-message">
-                                <p>@Html.DisplayFor(x => x.MessageContent)</p>
+                                <p>@Html.Raw(Model.MessageContent)</p>
+                                @*<p>@Html.DisplayFor(x => x.MessageContent)</p>*@
                             </div>
+                            <!-- /.mailbox-read-message -->
                         </div>
+                        <!-- /.card-footer -->
                     </div>
+                    <!-- /.card -->
                 </div>
+                <!-- /.col -->
             </div>
+            <!-- /.row -->
         </div>
     </section>
 </body>

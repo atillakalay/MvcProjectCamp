@@ -14,17 +14,16 @@ namespace Business.ValidationRules.FluentValidation
     {
         public MessageValidator()
         {
-            RuleFor(x => x.ReceiverMail).NotEmpty().WithMessage("Bu alanı boş geçemezsiniz");
-            RuleFor(x => x.Subject).NotEmpty().WithMessage("Bu alanı boş geçemezsiniz");
-            RuleFor(x => x.MessageContent).NotEmpty().WithMessage("Bu alanı boş geçemezsiniz");
-            RuleFor(p => p.Subject).MinimumLength(3).WithMessage("En az 3 karekter girişi yapın");
-            RuleFor(p => p.ReceiverMail).MinimumLength(3).WithMessage("En az 3 karekter girişi yapın");
-            RuleFor(p => p.Subject).MaximumLength(50).WithMessage("Maksimum 50 karekter !");
+            RuleFor(x => x.Subject).NotEmpty().WithMessage("Konuyu boş geçemezsiniz");
+            RuleFor(x => x.MessageContent).NotEmpty().WithMessage("Mesajı boş geçemezsiniz");
+            RuleFor(x => x.ReceiverMail).EmailAddress().WithMessage("Mail adresi giriniz").NotEmpty().WithMessage("Alıcı adresini boş geçemezsiniz");
+            RuleFor(x => x.Subject).MinimumLength(3).WithMessage("Lütfen en az 3 karakter girişi yapın");
+            RuleFor(x => x.Subject).MaximumLength(100).WithMessage("Lütfen 100 karakter fazla değer girişi yapmayın");
         }
-        private bool IsPasswordValid(string arg)
-        {
-            Regex regex = new Regex(@"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$");
-            return regex.IsMatch(arg);
-        }
+        //private bool IsPasswordValid(string arg)
+        //{
+        //    Regex regex = new Regex(@"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$");
+        //    return regex.IsMatch(arg);
+        //}
     }
 }

@@ -42,27 +42,64 @@ namespace MvcProjectCamp.Controllers
         {
             return View();
         }
+
         [HttpPost]
-        public ActionResult NewMessage(Message message)
+        public ActionResult NewMessage(Message message, string button)
         {
-            ValidationResult result = messageValidator.Validate(message);
-            if (result.IsValid)
+            ValidationResult results = messageValidator.Validate(message);
+            if (button == "draft")
             {
-                message.MessageDate=DateTime.Parse(DateTime.Now.ToShortDateString());
-                _messageManager.Add(message);
-                return RedirectToAction("SendBox");
-            }
-            else
-            {
-                foreach (var item in result.Errors)
+
+                results = messageValidator.Validate(message);
+                if (results.IsValid)
                 {
-                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                    message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+                    message.SenderMail = "admin@gmail.com";
+                    message.isDraft = true;
+                    _messageManager.Add(message);
+                    return RedirectToAction("Draft");
+                }
+                else
+                {
+                    foreach (var item in results.Errors)
+                    {
+                        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                    }
                 }
             }
-
+            else if (button == "save")
+            {
+                results = messageValidator.Validate(message);
+                if (results.IsValid)
+                {
+                    message.MessageDate = DateTime.Now;
+                    message.SenderMail = "admin@gmail.com";
+                    message.isDraft = false;
+                    _messageManager.Add(message);
+                    return RedirectToAction("SendBox");
+                }
+                else
+                {
+                    foreach (var item in results.Errors)
+                    {
+                        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                    }
+                }
+            }
             return View();
-
         }
 
+        public ActionResult Draft()
+        {
+            var sendList = _messageManager.GetListSendbox();
+            var draftList = sendList.FindAll(x => x.isDraft == true);
+            return View(draftList);
+        }
+
+        public ActionResult GetDraftMessageDetails(int id)
+        {
+            var Values = _messageManager.GetById(id);
+            return View(Values);
+        }
     }
 }

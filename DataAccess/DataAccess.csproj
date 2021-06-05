@@ -105,6 +105,10 @@
     <Compile Include="Migrations\202106041329140_mig_addImageFıle.designer.cs">
       <DependentUpon>202106041329140_mig_addImageFıle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106042105345_mig_idDrafAdded.cs" />
+    <Compile Include="Migrations\202106042105345_mig_idDrafAdded.designer.cs">
+      <DependentUpon>202106042105345_mig_idDrafAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -149,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106041329140_mig_addImageFıle.resx">
       <DependentUpon>202106041329140_mig_addImageFıle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106042105345_mig_idDrafAdded.resx">
+      <DependentUpon>202106042105345_mig_idDrafAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
