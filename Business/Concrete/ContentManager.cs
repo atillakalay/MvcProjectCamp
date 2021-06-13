@@ -22,6 +22,11 @@ namespace Business.Concrete
             return _contentDal.List();
         }
 
+        public List<Content> GetAllByWriter()
+        {
+            return _contentDal.List(x => x.WriterId == 1);
+        }
+
         public void Add(Content content)
         {
             _contentDal.Add(content);

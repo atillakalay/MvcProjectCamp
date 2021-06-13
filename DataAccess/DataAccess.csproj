@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAboutDal.cs" />
+    <Compile Include="Abstract\IAdminDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
@@ -59,7 +60,9 @@
     <Compile Include="Abstract\IImageFileDal.cs" />
     <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
+    <Compile Include="Abstract\IMyAboutDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfAboutDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfAdminDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfContactDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfContentDal.cs" />
@@ -67,6 +70,7 @@
     <Compile Include="Concrete\EntityFramework\EfHeadingDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfImageFileDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfMessageDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfMyAboutDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfWriterDal.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="Migrations\202105142148283_mig_writer_edit.cs" />
@@ -108,6 +112,30 @@
     <Compile Include="Migrations\202106042105345_mig_idDrafAdded.cs" />
     <Compile Include="Migrations\202106042105345_mig_idDrafAdded.designer.cs">
       <DependentUpon>202106042105345_mig_idDrafAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106090923430_mig_admminTable.cs" />
+    <Compile Include="Migrations\202106090923430_mig_admminTable.designer.cs">
+      <DependentUpon>202106090923430_mig_admminTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106110748193_mig_myAbout.cs" />
+    <Compile Include="Migrations\202106110748193_mig_myAbout.designer.cs">
+      <DependentUpon>202106110748193_mig_myAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106120948003_adminTableUpdated.cs" />
+    <Compile Include="Migrations\202106120948003_adminTableUpdated.designer.cs">
+      <DependentUpon>202106120948003_adminTableUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106130928093_mig_adminUpdate.cs" />
+    <Compile Include="Migrations\202106130928093_mig_adminUpdate.designer.cs">
+      <DependentUpon>202106130928093_mig_adminUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106130944032_mig_messageIsRead.cs" />
+    <Compile Include="Migrations\202106130944032_mig_messageIsRead.designer.cs">
+      <DependentUpon>202106130944032_mig_messageIsRead.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106131036294_mig_admin.cs" />
+    <Compile Include="Migrations\202106131036294_mig_admin.designer.cs">
+      <DependentUpon>202106131036294_mig_admin.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -156,6 +184,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106042105345_mig_idDrafAdded.resx">
       <DependentUpon>202106042105345_mig_idDrafAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106090923430_mig_admminTable.resx">
+      <DependentUpon>202106090923430_mig_admminTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106110748193_mig_myAbout.resx">
+      <DependentUpon>202106110748193_mig_myAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106120948003_adminTableUpdated.resx">
+      <DependentUpon>202106120948003_adminTableUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106130928093_mig_adminUpdate.resx">
+      <DependentUpon>202106130928093_mig_adminUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106130944032_mig_messageIsRead.resx">
+      <DependentUpon>202106130944032_mig_messageIsRead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106131036294_mig_admin.resx">
+      <DependentUpon>202106131036294_mig_admin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

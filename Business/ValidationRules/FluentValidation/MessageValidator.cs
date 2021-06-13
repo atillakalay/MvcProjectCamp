@@ -20,10 +20,5 @@ namespace Business.ValidationRules.FluentValidation
             RuleFor(x => x.Subject).MinimumLength(3).WithMessage("Lütfen en az 3 karakter girişi yapın");
             RuleFor(x => x.Subject).MaximumLength(100).WithMessage("Lütfen 100 karakter fazla değer girişi yapmayın");
         }
-        //private bool IsPasswordValid(string arg)
-        //{
-        //    Regex regex = new Regex(@"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$");
-        //    return regex.IsMatch(arg);
-        //}
     }
 }

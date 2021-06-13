@@ -14,7 +14,7 @@ namespace MvcProjectCamp.Controllers
         // GET: Contact
         private MessageManager _messageManager = new MessageManager(new EfMessageDal());
         private ContactManager _contactManager = new ContactManager(new EfContactDal());
-        private ContactValidator contactValidator = new ContactValidator();
+        
         public ActionResult Index()
         {
             var result = _contactManager.GetAll();
@@ -35,7 +35,6 @@ namespace MvcProjectCamp.Controllers
             ViewBag.sendCount = sendList.Count();
             var listResult2 = _messageManager.GetListInbox();
             ViewBag.inboxCount = listResult2.Count();
-
             var drafList = listResult.FindAll(x => x.isDraft == true);
             ViewBag.draftCount = drafList.Count();
             return PartialView();

@@ -12,5 +12,7 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Writer> Writers { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<ImageFile> ImageFiles { get; set; }
+        public DbSet<Admin> Admins { get; set; }
+        public DbSet<MyAbout> MyAbouts { get; set; }
     }
 }

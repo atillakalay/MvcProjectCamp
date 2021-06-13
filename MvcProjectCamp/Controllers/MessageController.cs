@@ -101,5 +101,28 @@ namespace MvcProjectCamp.Controllers
             var Values = _messageManager.GetById(id);
             return View(Values);
         }
+
+        public ActionResult IsRead(int id)
+        {
+            var result = _messageManager.GetById(id);
+            if (result.IsRead == true)
+            {
+                result.IsRead = false;
+            }
+            _messageManager.Update(result);
+            return RedirectToAction("ReadMessage");
+        }
+
+        public ActionResult ReadMessage()
+        {
+            var readMessage = _messageManager.GetAll(x => x.IsRead == true);
+            return View(readMessage);
+        }
+
+        public ActionResult UnReadMessage()
+        {
+            var unReadMessage = _messageManager.GetAll(x=>x.ReceiverMail=="admin@gmail.com"&&x.IsRead==false);
+            return View(unReadMessage);
+        }
     }
 }

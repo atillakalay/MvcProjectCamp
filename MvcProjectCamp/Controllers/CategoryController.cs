@@ -8,10 +8,12 @@ using FluentValidation.Results;
 
 namespace MvcProjectCamp.Controllers
 {
+    
     public class CategoryController : Controller
     {
         private CategoryManager _categoryManager = new CategoryManager(new EfCategoryDal());
         // GET: Category
+        [Authorize]
         public ActionResult Index()
         {
             return View();

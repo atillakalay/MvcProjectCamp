@@ -7,9 +7,10 @@ namespace Business.Abstract
     {
         Heading GetById(int id);
         List<Heading> GetAll();
+        List<Heading> GetListByWriter();
         void Add(Heading heading);
         void Update(Heading heading);
         void Delete(Heading heading);
-     
+
     }
 }
