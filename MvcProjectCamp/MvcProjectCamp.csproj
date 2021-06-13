@@ -1807,7 +1807,6 @@
     <Content Include="Views\Contact\ContactSideBarPartial.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Login\Index2.cshtml" />
-    <Content Include="Views\MyAbout\Index.cshtml" />
     <Content Include="Views\Shared\WriterLayout.cshtml" />
     <Content Include="Views\WriterPanel\WriterProfile.cshtml" />
     <Content Include="Views\WriterPanel\HeadingByWriter.cshtml" />
@@ -1825,6 +1824,7 @@
     <Content Include="Views\Message\UnReadMessage.cshtml" />
     <Content Include="Views\Message\ReadMessage.cshtml" />
     <Content Include="Views\Register\Index.cshtml" />
+    <Content Include="Views\MyAbout\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
