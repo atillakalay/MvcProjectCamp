@@ -13,9 +13,9 @@ namespace MvcProjectCamp.Controllers
         public ActionResult MyContent(string result)
         {
             result = (string)Session["WriterMail"];
-            var writeridinfo = _efContext.Writers.Where(w => w.WriterMail == result).Select(x => x.WriterId).FirstOrDefault();
-            var contentvalues = _contentManager.GetListByWriter(writeridinfo);
-            return View(contentvalues);
+            var writerIdInfo = _efContext.Writers.Where(w => w.WriterMail == result).Select(x => x.WriterId).FirstOrDefault();
+            var contentValues = _contentManager.GetListByWriter(writerIdInfo);
+            return View(contentValues);
         }
     }
 }
