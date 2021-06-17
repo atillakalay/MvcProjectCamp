@@ -26,14 +26,14 @@ namespace Business.Concrete
             return _headingDal.List();
         }
 
-        public List<Heading> GetListByWriter()
+        public List<Heading> GetListByWriter(int id)
         {
-            return _headingDal.List(x => x.WriterId == 1&&x.HeadingStatus==true);
+            return _headingDal.List(x => x.WriterId == id && x.HeadingStatus == true);
         }
 
         public List<Heading> GetAll(int id)
         {
-            return _headingDal.List(x => x.WriterId ==id);
+            return _headingDal.List(x => x.WriterId == id);
         }
 
         public void Add(Heading heading)

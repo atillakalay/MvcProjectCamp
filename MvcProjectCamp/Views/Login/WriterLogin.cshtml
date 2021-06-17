@@ -53,6 +53,17 @@
                                     <a href="#" style="color: #fff">Şifremi Unuttum</a>
                                 </div>
                             </div>
+                            <div>
+                                @using (Html.BeginForm("WriterLogin", "Login", FormMethod.Post))
+                                {
+                                    <div class="g-recaptcha" data-sitekey="6LfQczwbAAAAADP-yk6RizRtAawpfdSm0BKpZz6f"></div>
+                                    <input type="submit" value="Submit" />
+                                }
+                            </div>
+                            <span style="display:inline-block; font-size:20px;margin:20px 0;padding:20px;border:1px solid #D3D3D3">
+                                @ViewBag.Message
+                            </span>
+                            <script src='https://www.google.com/recaptcha/api.js' type="text/javascript"></script>
                         }
                         <p class="w-100 text-center">&mdash; Veya Sosyal Medya İle Giriş Yapın &mdash;</p>
                         <div class="social d-flex text-center">
