@@ -8,19 +8,16 @@
 @using (Html.BeginForm("AddCategory", "Category", FormMethod.Post))
 {
     <div class="form-group">
-        @Html.Label("Kategori adı")
-        @Html.TextBoxFor(x => x.CategoryName,new {@class="form-control"})
-        @Html.ValidationMessageFor(x => x.CategoryName)
-        <br /><br />
-        @Html.Label("Açıklamayı giriniz")
-        @Html.TextBoxFor(x => x.CategoryDescription, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.CategoryDescription)
-        <br /><br />
-        <button class="btn btn-info">Kaydet</button>
+        @Html.Label("Kategori Adı")
+        @Html.TextBoxFor(c => c.CategoryName)
+        @Html.ValidationMessageFor(c => c.CategoryName)
+        <br /> <br />
+        @Html.Label("Açıklamayı yazınız")
+        @Html.TextBoxFor(c => c.CategoryDescription)
+        @Html.ValidationMessageFor(c => c.CategoryDescription)
+        <br /> <br />
+        <button>Kaydet</button>
+
+
     </div>
 }
-
-
-@*<form method="post" class="form form-group">
-        <input type="text" placeholder="Kategori adı giriniz" class="form form-control"/>
-    </form>*@

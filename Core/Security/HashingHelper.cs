@@ -9,55 +9,55 @@ namespace Core.Security
 {
     public class HashingHelper
     {
-        public static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
+        public static void CreatePasswordHash(string userName, string password, out byte[] userNameHash, out byte[] passwordHash, out byte[] passwordSalt)
         {
             using (var hmac = new System.Security.Cryptography.HMACSHA512())
             {
                 passwordSalt = hmac.Key;
                 passwordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
-
+                userNameHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(userName));
             }
         }
-        public static bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
+
+        public static bool VerifyPasswordHash(string userName, string password, byte[] userNameHash, byte[] passwordHash, byte[] passwordSalt)
         {
             using (var hmac = new System.Security.Cryptography.HMACSHA512(passwordSalt))
             {
-                var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
-                for (int i = 0; i < computedHash.Length; i++)
+                var computedPasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
+                for (int i = 0; i < computedPasswordHash.Length; i++)
                 {
-                    if (computedHash[i] != passwordHash[i])
+                    if (computedPasswordHash[i] != passwordHash[i])
                     {
                         return false;
                     }
                 }
-            }
 
-            return true;
+                var computedUserNameHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(userName));
+                for (int i = 0; i < computedUserNameHash.Length; i++)
+                {
+                    if (computedUserNameHash[i] != userNameHash[i])
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
         }
-        public static void CreateMailHash(string mail, out byte[] mailHash, out byte[] mailSalt)
+
+        public static bool VerifyPasswordHash(string userName, byte[] userNameHash)
         {
             using (var hmac = new System.Security.Cryptography.HMACSHA512())
             {
-                mailSalt = hmac.Key;
-                mailHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(mail));
-
-            }
-        }
-        public static bool VerifyMailHash(string mail, byte[] mailHash, byte[] mailSalt)
-        {
-            using (var hmac = new System.Security.Cryptography.HMACSHA512(mailSalt))
-            {
-                var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(mail));
-                for (int i = 0; i < computedHash.Length; i++)
+                var computedUserNameHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(userName));
+                for (int i = 0; i < computedUserNameHash.Length; i++)
                 {
-                    if (computedHash[i] != mailHash[i])
+                    if (computedUserNameHash[i] != userNameHash[i])
                     {
                         return false;
                     }
                 }
+                return true;
             }
-
-            return true;
         }
     }
 }

@@ -13,8 +13,10 @@ namespace Business.Abstract
         List<Content> GetAll();
         List<Content> GetAllByWriter();
         List<Content> GetListById(int id);
+        List<Content> GetListByWriter(int id);
         void Add(Content content);
         void Update(Content content);
         void Delete(Content content);
+
     }
 }

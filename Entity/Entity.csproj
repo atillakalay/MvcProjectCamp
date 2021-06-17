@@ -53,6 +53,7 @@
     <Compile Include="Concrete\MyAbout.cs" />
     <Compile Include="Concrete\OperationClaim.cs" />
     <Compile Include="Concrete\Writer.cs" />
+    <Compile Include="DTOs\LoginDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

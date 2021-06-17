@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAdminService.cs" />
+    <Compile Include="Abstract\IAuthService.cs" />
     <Compile Include="Abstract\IContactService.cs" />
     <Compile Include="Abstract\IAboutService.cs" />
     <Compile Include="Abstract\ICategoryService.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Abstract\IWriterService.cs" />
     <Compile Include="Concrete\AboutManager.cs" />
     <Compile Include="Concrete\AdminManager.cs" />
+    <Compile Include="Concrete\AuthManager.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
     <Compile Include="Concrete\ContactManager.cs" />
     <Compile Include="Concrete\ContentManager.cs" />

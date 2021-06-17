@@ -137,6 +137,10 @@
     <Compile Include="Migrations\202106131036294_mig_admin.designer.cs">
       <DependentUpon>202106131036294_mig_admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106160639079_mig_writerRole.cs" />
+    <Compile Include="Migrations\202106160639079_mig_writerRole.designer.cs">
+      <DependentUpon>202106160639079_mig_writerRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -202,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106131036294_mig_admin.resx">
       <DependentUpon>202106131036294_mig_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106160639079_mig_writerRole.resx">
+      <DependentUpon>202106160639079_mig_writerRole.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

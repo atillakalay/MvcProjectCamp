@@ -5,23 +5,23 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using Business.Abstract;
 using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entity.Concrete;
+using Entity.DTOs;
 
 namespace MvcProjectCamp.Controllers
 {
     public class RegisterController : Controller
     {
-        // GET: Register
         AdminManager _adminManager = new AdminManager(new EfAdminDal());
-
+        // GET: Register
         [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
-
         [HttpPost]
         public ActionResult Index(Admin admin)
         {

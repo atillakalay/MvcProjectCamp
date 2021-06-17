@@ -33,7 +33,7 @@ namespace Entity.Concrete
 
         [StringLength(50)]
         public string WriterTitle { get; set; }
-
+        public string WriterRole { get; set; }
         public bool WriterStatus { get; set; }
 
         public ICollection<Heading> Headings { get; set; }
