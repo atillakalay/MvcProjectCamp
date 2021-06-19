@@ -63,13 +63,7 @@ namespace MvcProjectCamp.Controllers
         [HttpPost]
         public ActionResult WriterLogin(Writer writer)
         {
-            var response = Request["g-recaptcha-response"];
-            string secretKey = "6LfQczwbAAAAALfDCFJZaWrksASvI4BJOSm5FKUD";
-            var client = new WebClient();
-            var result = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secretKey, response));
-            var obj = JObject.Parse(result);
-            var status = (bool)obj.SelectToken("success");
-            ViewBag.Message = status ? "Google reCaptcha validation success" : "Google reCaptcha validation failed";
+          
             SHA1 sha1 = new SHA1CryptoServiceProvider();
             string password = writer.WriterPassword;
             string results = Convert.ToBase64String(sha1.ComputeHash(Encoding.UTF8.GetBytes(password)));
@@ -78,6 +72,13 @@ namespace MvcProjectCamp.Controllers
             EfContext context = new EfContext();
             var writerUserInfo = context.Writers.FirstOrDefault(x => x.WriterMail == writer.WriterMail &&
                                                                      x.WriterPassword == results);
+            var response = Request["g-recaptcha-response"];
+            string secretKey = "6LfQczwbAAAAALfDCFJZaWrksASvI4BJOSm5FKUD";
+            var client = new WebClient();
+            var result = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secretKey, response));
+            var obj = JObject.Parse(result);
+            var status = (bool)obj.SelectToken("success");
+            ViewBag.Message = status ? "Google reCaptcha validation success" : "Google reCaptcha validation failed";
 
 
             if (writerUserInfo != null)
