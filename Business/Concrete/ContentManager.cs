@@ -34,6 +34,8 @@ namespace Business.Concrete
 
         public void Add(Content content)
         {
+            content.ContentDate=DateTime.Parse(DateTime.Now.ToShortDateString());
+            content.ContentStatus = true;
             _contentDal.Add(content);
         }
 

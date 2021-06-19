@@ -51,7 +51,8 @@ namespace MvcProjectCamp.Controllers
         public ActionResult LogOut()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Login");
+            Session.Abandon();
+            return RedirectToAction("Headings", "Default");
         }
         [HttpGet]
         public ActionResult WriterLogin()
@@ -92,5 +93,4 @@ namespace MvcProjectCamp.Controllers
             return View();
         }
     }
-
 }

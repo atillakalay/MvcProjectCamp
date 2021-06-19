@@ -4,12 +4,15 @@ using DataAccess.Concrete.EntityFramework;
 
 namespace MvcProjectCamp.Controllers
 {
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
         private HeadingManager _headingManager = new HeadingManager(new EfHeadingDal());
-        public ActionResult Index()
+        private ContentManager _contentManager = new ContentManager(new EfContentDal());
+        public PartialViewResult Index(int id=0)
         {
-            return View();
+            var contentList = _contentManager.GetListById(id);
+            return PartialView(contentList);
         }
         public ActionResult Headings()
         {

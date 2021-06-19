@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
+using Entity.Concrete;
 
 namespace MvcProjectCamp.Controllers
 {
@@ -16,6 +17,21 @@ namespace MvcProjectCamp.Controllers
             var writerIdInfo = _efContext.Writers.Where(w => w.WriterMail == result).Select(x => x.WriterId).FirstOrDefault();
             var contentValues = _contentManager.GetListByWriter(writerIdInfo);
             return View(contentValues);
+        }
+        [HttpGet]
+        public ActionResult Add(int id)
+        {
+            ViewBag.headingId = id;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Add(Content content)
+        {
+            string email = (string)Session["WriterMail"];
+            var writerIdInfo = _efContext.Writers.Where(w => w.WriterMail == email).Select(x => x.WriterId).FirstOrDefault();
+            content.WriterId = writerIdInfo;
+            _contentManager.Add(content);
+            return RedirectToAction("MyContent");
         }
     }
 }

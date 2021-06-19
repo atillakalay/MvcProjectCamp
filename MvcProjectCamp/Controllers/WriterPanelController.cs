@@ -85,5 +85,16 @@ namespace MvcProjectCamp.Controllers
             _headingManager.Delete(headingValue);
             return RedirectToAction("HeadingByWriter");
         }
+
+        public ActionResult AllHeading()
+        {
+            var headingList = _headingManager.GetAll();
+            return View(headingList);
+        }
+
+        public ActionResult ToDoList()
+        {
+            return View();
+        }
     }
 }

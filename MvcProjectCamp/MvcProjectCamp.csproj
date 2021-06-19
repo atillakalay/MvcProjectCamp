@@ -1943,6 +1943,9 @@
     <Content Include="Views\MyAbout\Index.cshtml" />
     <Content Include="Views\Login\WriterLogin.cshtml" />
     <Content Include="Views\Default\Headings.cshtml" />
+    <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\WriterPanel\AllHeading.cshtml" />
+    <Content Include="Views\WriterPanelContent\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
