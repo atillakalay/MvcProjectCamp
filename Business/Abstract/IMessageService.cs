@@ -7,8 +7,8 @@ namespace Business.Abstract
 {
     public interface IMessageService
     {
-        List<Message> GetListInbox();
-        List<Message> GetListSendbox();
+        List<Message> GetListInbox(string userEmail);
+        List<Message> GetListSendbox(string userEmail);
         Message GetById(int id);
         void Add(Message message);
         void Update(Message message);

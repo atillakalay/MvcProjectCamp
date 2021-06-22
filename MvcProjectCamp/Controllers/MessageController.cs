@@ -16,13 +16,15 @@ namespace MvcProjectCamp.Controllers
         // GET: Message
         public ActionResult Inbox()
         {
-            var result = _messageManager.GetListInbox();
+            string userEmail = (string)Session["WriterMail"];
+            var result = _messageManager.GetListInbox(userEmail);
             return View(result);
         }
 
         public ActionResult SendBox()
         {
-            var result = _messageManager.GetListSendbox();
+            string userEmail = (string)Session["WriterMail"];
+            var result = _messageManager.GetListSendbox(userEmail);
             return View(result);
         }
 
@@ -91,7 +93,8 @@ namespace MvcProjectCamp.Controllers
 
         public ActionResult Draft()
         {
-            var sendList = _messageManager.GetListSendbox();
+            string userEmail = (string)Session["WriterMail"];
+            var sendList = _messageManager.GetListSendbox(userEmail);
             var draftList = sendList.FindAll(x => x.isDraft == true);
             return View(draftList);
         }

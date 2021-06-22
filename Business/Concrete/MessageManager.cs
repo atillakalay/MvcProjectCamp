@@ -16,14 +16,14 @@ namespace Business.Concrete
             _messageDal = messageDal;
         }
 
-        public List<Message> GetListInbox()
+        public List<Message> GetListInbox(string userEmail)
         {
-            return _messageDal.List(x => x.ReceiverMail == "aliyildiz@gmail.com");
+            return _messageDal.List(x => x.ReceiverMail == userEmail);
         }
 
-        public List<Message> GetListSendbox()
+        public List<Message> GetListSendbox(string userEmail)
         {
-            return _messageDal.List(x => x.SenderMail == "emel@emel.com");
+            return _messageDal.List(x => x.SenderMail == userEmail);
         }
 
         public Message GetById(int id)

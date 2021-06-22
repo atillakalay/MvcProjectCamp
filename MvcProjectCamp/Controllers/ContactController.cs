@@ -28,12 +28,13 @@ namespace MvcProjectCamp.Controllers
         }
         public PartialViewResult ContactSideBarPartial()
         {
+            string userEmail = (string)Session["WriterMail"];
             var contactList = _contactManager.GetAll();
             ViewBag.contactCount = contactList.Count();
-            var listResult = _messageManager.GetListSendbox();
+            var listResult = _messageManager.GetListSendbox(userEmail);
             var sendList = listResult.FindAll(x => x.isDraft == false);
             ViewBag.sendCount = sendList.Count();
-            var listResult2 = _messageManager.GetListInbox();
+            var listResult2 = _messageManager.GetListInbox(userEmail);
             ViewBag.inboxCount = listResult2.Count();
             var drafList = listResult.FindAll(x => x.isDraft == true);
             ViewBag.draftCount = drafList.Count();

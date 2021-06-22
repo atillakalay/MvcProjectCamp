@@ -4,8 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Business.Concrete;
+using Business.ValidationRules.FluentValidation;
 using DataAccess.Concrete.EntityFramework;
 using Entity.Concrete;
+using FluentValidation.Results;
+using PagedList;
 
 namespace MvcProjectCamp.Controllers
 {
@@ -14,9 +17,35 @@ namespace MvcProjectCamp.Controllers
         // GET: WriterPanel
         private HeadingManager _headingManager = new HeadingManager(new EfHeadingDal());
         private CategoryManager _categoryManager = new CategoryManager(new EfCategoryDal());
+        private WriterManager _writerManager = new WriterManager(new EfWriterDal());
         private EfContext _efContext = new EfContext();
+        [HttpGet]
         public ActionResult WriterProfile()
         {
+            string result = (string)Session["WriterMail"];
+            var writerIdInfo = _efContext.Writers.Where(w => w.WriterMail == result).Select(x => x.WriterId).FirstOrDefault();
+            var writerValue = _writerManager.GetById(writerIdInfo);
+            ViewBag.d = writerIdInfo;
+            return View(writerValue);
+        }
+        [HttpPost]
+        public ActionResult WriterProfile(Writer writer)
+        {
+            WriterValidator writerValidator = new WriterValidator();
+            ValidationResult results = writerValidator.Validate(writer);
+            if (results.IsValid)
+            {
+                _writerManager.Update(writer);
+                return RedirectToAction("WriterProfile");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+
             return View();
         }
 
@@ -86,15 +115,11 @@ namespace MvcProjectCamp.Controllers
             return RedirectToAction("HeadingByWriter");
         }
 
-        public ActionResult AllHeading()
+        public ActionResult AllHeading(int pageNumber = 1)
         {
-            var headingList = _headingManager.GetAll();
+            var headingList = _headingManager.GetAll().ToPagedList(pageNumber, 4);
             return View(headingList);
         }
 
-        public ActionResult ToDoList()
-        {
-            return View();
-        }
     }
 }

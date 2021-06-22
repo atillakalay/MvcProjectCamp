@@ -57,7 +57,6 @@ namespace MvcProjectCamp.Controllers
         [HttpGet]
         public ActionResult WriterLogin()
         {
-          
             return View();
         }
 
@@ -79,7 +78,6 @@ namespace MvcProjectCamp.Controllers
             var result = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secretKey, response));
             var obj = JObject.Parse(result);
             var status = (bool)obj.SelectToken("success");
-            ViewBag.Message = status ? "Google reCaptcha validation success" : "Google reCaptcha validation failed";
 
 
             if (writerUserInfo != null)

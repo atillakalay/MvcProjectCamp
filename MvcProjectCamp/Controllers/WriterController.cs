@@ -9,7 +9,7 @@ namespace MvcProjectCamp.Controllers
 {
     public class WriterController : Controller
     {
-        WriterValidator writerValidator = new WriterValidator();
+       private WriterValidator writerValidator = new WriterValidator();
         private WriterManager writerManager = new WriterManager(new EfWriterDal());
         public ActionResult Index()
         {

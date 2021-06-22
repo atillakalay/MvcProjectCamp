@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
+
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Business.Concrete;
 using Business.ValidationRules.FluentValidation;
@@ -18,22 +17,25 @@ namespace MvcProjectCamp.Controllers
         private MessageValidator messageValidator = new MessageValidator();
         public ActionResult Inbox()
         {
-            var result = _messageManager.GetListInbox();
+            string userEmail = (string)Session["WriterMail"];
+            var result = _messageManager.GetListInbox(userEmail);
             return View(result);
         }
         public ActionResult SendBox()
         {
-            var result = _messageManager.GetListSendbox();
+            string userEmail = (string)Session["WriterMail"];
+            var result = _messageManager.GetListSendbox(userEmail);
             return View(result);
         }
         public PartialViewResult ContactSideBarPartial()
         {
+            string userEmail = (string)Session["WriterMail"];
             var contactList = _contactManager.GetAll();
             ViewBag.contactCount = contactList.Count();
-            var listResult = _messageManager.GetListSendbox();
+            var listResult = _messageManager.GetListSendbox(userEmail);
             var sendList = listResult.FindAll(x => x.isDraft == false);
             ViewBag.sendCount = sendList.Count();
-            var listResult2 = _messageManager.GetListInbox();
+            var listResult2 = _messageManager.GetListInbox(userEmail);
             ViewBag.inboxCount = listResult2.Count();
             var drafList = listResult.FindAll(x => x.isDraft == true);
             ViewBag.draftCount = drafList.Count();
@@ -58,6 +60,7 @@ namespace MvcProjectCamp.Controllers
         [HttpPost]
         public ActionResult NewMessage(Message message, string button)
         {
+            string userEmail = (string)Session["WriterMail"];
             ValidationResult results = messageValidator.Validate(message);
             if (button == "draft")
             {
@@ -66,7 +69,7 @@ namespace MvcProjectCamp.Controllers
                 if (results.IsValid)
                 {
                     message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-                    message.SenderMail = "admin@gmail.com";
+                    message.SenderMail = userEmail;
                     message.isDraft = true;
                     _messageManager.Add(message);
                     return RedirectToAction("Draft");
@@ -85,7 +88,7 @@ namespace MvcProjectCamp.Controllers
                 if (results.IsValid)
                 {
                     message.MessageDate = DateTime.Now;
-                    message.SenderMail = "admin@gmail.com";
+                    message.SenderMail = userEmail;
                     message.isDraft = false;
                     _messageManager.Add(message);
                     return RedirectToAction("SendBox");
@@ -102,7 +105,8 @@ namespace MvcProjectCamp.Controllers
         }
         public ActionResult Draft()
         {
-            var sendList = _messageManager.GetListSendbox();
+            string userEmail = (string)Session["WriterMail"];
+            var sendList = _messageManager.GetListSendbox(userEmail);
             var draftList = sendList.FindAll(x => x.isDraft == true);
             return View(draftList);
         }

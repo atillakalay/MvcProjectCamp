@@ -26,11 +26,13 @@ namespace Business.Concrete
 
         public void Add(Writer writer)
         {
-           _writerDal.Add(writer);
+            _writerDal.Add(writer);
         }
 
         public void Update(Writer writer)
         {
+            writer.WriterStatus = true;
+            writer.WriterRole = "B";
             _writerDal.Update(writer);
         }
 
