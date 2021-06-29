@@ -18,6 +18,19 @@ namespace MvcProjectCamp.Controllers
             return View();
         }
 
+        public ActionResult GetAllContent(string searchedWord)
+        {
+            var searchedWords = _contentManager.GetSearchedWords(searchedWord);
+
+            if (!string.IsNullOrEmpty(searchedWord))
+            {
+                return View(searchedWords);
+            }
+
+            return View(_contentManager.GetAll());
+
+        }
+
         public ActionResult ContentByHeading(int id)
         {
             var result = _contentManager.GetListById(id);

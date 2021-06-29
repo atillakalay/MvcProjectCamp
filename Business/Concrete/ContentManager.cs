@@ -22,6 +22,11 @@ namespace Business.Concrete
             return _contentDal.List();
         }
 
+        public List<Content> GetSearchedWords(string searchedWords)
+        {
+            return _contentDal.List(x => x.ContentValue.Contains(searchedWords));
+        }
+
         public List<Content> GetAllByWriter()
         {
             return _contentDal.List(x => x.WriterId == 1);
@@ -34,7 +39,7 @@ namespace Business.Concrete
 
         public void Add(Content content)
         {
-            content.ContentDate=DateTime.Parse(DateTime.Now.ToShortDateString());
+            content.ContentDate = DateTime.Parse(DateTime.Now.ToShortDateString());
             content.ContentStatus = true;
             _contentDal.Add(content);
         }
