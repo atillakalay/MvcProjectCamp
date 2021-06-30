@@ -16,8 +16,15 @@
         @Html.TextAreaFor(x => x.CategoryDescription, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.CategoryDescription)
         <br /><br />
-        <button class="btn btn-info">Kaydet</button>
+        <button class="btn btn-info" id="btn-add">Kaydet</button>
     </div>
 }
-
+<script>
+    $('.btn-add').click(function () {
+        swal("Good job!", "You clicked the button!", "success");
+    });
+</script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="~/Scripts/jquery-3.6.0.js"></script>
 
