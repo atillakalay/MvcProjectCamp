@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
+using Entity.Concrete;
 
 namespace MvcProjectCamp.Controllers
 {

@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "CategoryLineChart";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -23,7 +23,7 @@
                 type: "POST",
                 dataType: "json",
                 contentType: "application/json",
-                url: '@Url.Action("CategoryChart", "Chart")',
+                url: '@Url.Action("VisualizeByCategory", "Chart")',
                 success: function (result) {
                     google.charts.load('current', {
                         'packages': ['corechart']
@@ -49,7 +49,7 @@
                 height: 600,
                 bar: { groupWidth: "20%" },
             };
-            var columnChart = new google.visualization.PieChart(document
+            var columnChart = new google.visualization.LineChart(document
                 .getElementById('Piechart_div'));
             columnChart.draw(data, columnChartOptions);
         }
@@ -59,4 +59,5 @@
     <div id="Piechart_div"></div>
 </body>
 </html>
+
 

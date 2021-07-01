@@ -19,12 +19,17 @@
         <button class="btn btn-info" id="btn-add">Kaydet</button>
     </div>
 }
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.6.0.js"></script>
 <script>
-    $('.btn-add').click(function () {
-        swal("Good job!", "You clicked the button!", "success");
+    $('#btn-add').click(function () {
+        swal({
+            title: "Tebrikler",
+            text: "Ekleme işlemi başarıyla gerçekleşti",
+            icon: "başarılı",
+            timer: 5000
+        });
+
     });
 </script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="~/Scripts/jquery-3.6.0.js"></script>
 
