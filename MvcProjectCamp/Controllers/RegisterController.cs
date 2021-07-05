@@ -29,7 +29,7 @@ namespace MvcProjectCamp.Controllers
             string password = admin.AdminPassword;
             string result = Convert.ToBase64String(sha1.ComputeHash(Encoding.UTF8.GetBytes(password)));
             admin.AdminPassword = result;
-            admin.AdminRole = "B";
+            admin.AdminRole = "A";
             _adminManager.Add(admin);
             return RedirectToAction("Index", "Login");
         }

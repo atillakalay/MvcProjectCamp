@@ -15,7 +15,7 @@ namespace MvcProjectCamp.Controllers
     {
         private CategoryManager _categoryManager = new CategoryManager(new EfCategoryDal());
 
-        [Authorize(Roles = "B")]
+        [Authorize(Roles = "A")]
         public ActionResult Index()
         {
             var result = _categoryManager.GetAll();

@@ -17,18 +17,26 @@
         <th>Pasif Yap</th>
         <th>Yetkisini Değiştir</th>
     </tr>
-    @foreach (var categories in Model)
+    @foreach (var admin in Model)
     {
         <tr>
-            <th>@categories.AdminId</th>
-            <td>@categories.AdminUserName</td>
-            <td>@categories.AdminRole</td>
-            <td>Aktif</td>
-            <td><a href="" class="btn btn-warning">Pasif Yap</a></td>
-            <td><a href="" class="btn btn-danger">Yetkisini Değiştir</a></td>
+            <th>@admin.AdminId</th>
+            <td>@admin.AdminUserName</td>
+            <td>@admin.AdminRole</td>
+            <td>@admin.AdminStatus</td>
+            @if (admin.AdminStatus == true)
+            {
+                <td><a href="/Authorization/Delete/@admin.AdminId" class="btn btn-warning">Pasif Yap</a></td>
+            }
+            else
+            {
+                <td><a href="/Authorization/Delete/@admin.AdminId" class="btn btn-success">Aktif Yap</a></td>
+            }
+
+            <td><a href="/Authorization/Update/@admin.AdminId" class="btn btn-danger">Yetkisini Değiştir</a></td>
         </tr>
     }
 </table>
-<a href="/AdminCategory/Add/" class="btn btn-info ">Yeni Admin Ekle</a>
+<a href="/Authorization/Add/" class="btn btn-info ">Yeni Admin Ekle</a>
 
 

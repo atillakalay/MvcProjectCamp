@@ -26,6 +26,7 @@ namespace Business.Concrete
 
         public void Add(Admin admin)
         {
+            admin.AdminStatus = true;
             _adminDal.Add(admin);
         }
 
@@ -36,7 +37,7 @@ namespace Business.Concrete
 
         public void Delete(Admin admin)
         {
-            _adminDal.Delete(admin);
+            _adminDal.Update(admin);
         }
     }
 
