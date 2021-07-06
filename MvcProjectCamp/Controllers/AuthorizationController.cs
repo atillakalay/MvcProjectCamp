@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
 using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entity.Concrete;
@@ -8,6 +10,8 @@ namespace MvcProjectCamp.Controllers
     public class AuthorizationController : Controller
     {
         private AdminManager _adminManager = new AdminManager(new EfAdminDal());
+        private RoleManager _roleManager = new RoleManager(new EfRoleDal());
+
         [Authorize(Roles = "A")]
         public ActionResult Index()
         {
@@ -28,8 +32,18 @@ namespace MvcProjectCamp.Controllers
         [HttpGet]
         public ActionResult Update(int id)
         {
-            var categoryValue = _adminManager.GetById(id);
-            return View(categoryValue);
+            List<SelectListItem> adminRole = (from c in _roleManager.GetAll()
+                select new SelectListItem
+                {
+                    Text = c.Name,
+                    Value = c.Id.ToString()
+
+                }).ToList();
+
+            ViewBag.valueadmin = adminRole;
+
+            var adminValue = _adminManager.GetById(id);
+            return View(adminValue);
         }
         [HttpPost]
         public ActionResult Update(Admin admin)

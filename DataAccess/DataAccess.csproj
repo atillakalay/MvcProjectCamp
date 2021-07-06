@@ -59,6 +59,7 @@
     <Compile Include="Abstract\IHeadingDal.cs" />
     <Compile Include="Abstract\IImageFileDal.cs" />
     <Compile Include="Abstract\IMessageDal.cs" />
+    <Compile Include="Abstract\IRoleDal.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Abstract\IMyAboutDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfAboutDal.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Concrete\EntityFramework\EfImageFileDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfMessageDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfMyAboutDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfRoleDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfWriterDal.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="Migrations\202105142148283_mig_writer_edit.cs" />
@@ -145,6 +147,10 @@
     <Compile Include="Migrations\202107051028492_mig_adminStatusAdded.designer.cs">
       <DependentUpon>202107051028492_mig_adminStatusAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107060653455_mig_adminRoleAdded.cs" />
+    <Compile Include="Migrations\202107060653455_mig_adminRoleAdded.designer.cs">
+      <DependentUpon>202107060653455_mig_adminRoleAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -216,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107051028492_mig_adminStatusAdded.resx">
       <DependentUpon>202107051028492_mig_adminStatusAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107060653455_mig_adminRoleAdded.resx">
+      <DependentUpon>202107060653455_mig_adminRoleAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
