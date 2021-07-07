@@ -135,6 +135,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AbilityController.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminCategoryController.cs" />
     <Compile Include="Controllers\AuthorizationController.cs" />
@@ -2028,9 +2029,14 @@
     <Content Include="Views\Chart\CategoryLineChart.cshtml" />
     <Content Include="Views\Authorization\Add.cshtml" />
     <Content Include="Views\Authorization\Update.cshtml" />
+    <Content Include="Views\Ability\Index.cshtml" />
+    <Content Include="Views\MyAbout\Add.cshtml" />
+    <Content Include="Views\MyAbout\Update.cshtml" />
+    <Content Include="Views\Gallery\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
     <Folder Include="Views\Abour\" />
   </ItemGroup>
   <ItemGroup>

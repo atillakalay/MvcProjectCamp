@@ -22,5 +22,9 @@ namespace Business.Concrete
         {
             return _imageFileDal.List();
         }
+        public void Add(ImageFile imageFile)
+        {
+            _imageFileDal.Add(imageFile);
+        }
     }
 }

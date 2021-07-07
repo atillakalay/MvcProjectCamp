@@ -14,5 +14,6 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<ImageFile> ImageFiles { get; set; }
         public DbSet<Admin> Admins { get; set; }
         public DbSet<MyAbout> MyAbouts { get; set; }
+        public DbSet<Ability> Abilities { get; set; }
     }
 }

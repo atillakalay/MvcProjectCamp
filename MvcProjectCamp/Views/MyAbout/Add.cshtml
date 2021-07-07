@@ -1,0 +1,51 @@
+﻿@model Entity.Concrete.MyAbout
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Yetenek Ekle</h2>
+<br />
+@using (Html.BeginForm("Add", "MyAbout", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Adı")
+    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Soyadı")
+    @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Hakkında")
+    @Html.TextBoxFor(x => x.AboutShort, new { @class = "form-control" })
+    <br />
+    @Html.Label("Resim Yolu")
+    @Html.TextBoxFor(x => x.ImagePath, new { @class = "form-control" })
+    <br />
+    @Html.Label("Yetenek 1")
+    @Html.TextBoxFor(x => x.Skill1, new { @class = "form-control" })
+    <br />
+    @Html.Label("Yetenek 2")
+    @Html.TextBoxFor(x => x.Skill2, new { @class = "form-control" })
+    <br />
+    @Html.Label("Yetenek 3")
+    @Html.TextBoxFor(x => x.Skill3, new { @class = "form-control" })
+    <br />
+    @Html.Label("Yetenek 4")
+    @Html.TextBoxFor(x => x.Skill4, new { @class = "form-control" })
+    <br />
+    @Html.Label("Oran 1")
+    @Html.TextBoxFor(x => x.Rate1, new { @class = "form-control" })
+    <br />
+    @Html.Label("Oran 2")
+    @Html.TextBoxFor(x => x.Rate2, new { @class = "form-control" })
+    <br />
+    @Html.Label("Oran 3")
+    @Html.TextBoxFor(x => x.Rate3, new { @class = "form-control" })
+    <br />
+    @Html.Label("Oran 4")
+    @Html.TextBoxFor(x => x.Rate4, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Yetenek Ekle</button>
+</div>
+
+}

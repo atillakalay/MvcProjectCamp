@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IAbilityService.cs" />
     <Compile Include="Abstract\IAdminService.cs" />
     <Compile Include="Abstract\IAuthService.cs" />
     <Compile Include="Abstract\IContactService.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Abstract\IWriterLoginService.cs" />
     <Compile Include="Abstract\IWriterService.cs" />
     <Compile Include="Abstract\RoleService.cs" />
+    <Compile Include="Concrete\AbilityManager.cs" />
     <Compile Include="Concrete\AboutManager.cs" />
     <Compile Include="Concrete\AdminManager.cs" />
     <Compile Include="Concrete\AuthManager.cs" />

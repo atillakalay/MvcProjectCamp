@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IAbilityDal.cs" />
     <Compile Include="Abstract\IAboutDal.cs" />
     <Compile Include="Abstract\IAdminDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Abstract\IRoleDal.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Abstract\IMyAboutDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfAbilityDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfAboutDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfAdminDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
@@ -151,6 +153,18 @@
     <Compile Include="Migrations\202107060653455_mig_adminRoleAdded.designer.cs">
       <DependentUpon>202107060653455_mig_adminRoleAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107062003336_mig_headingCreatedDate.cs" />
+    <Compile Include="Migrations\202107062003336_mig_headingCreatedDate.designer.cs">
+      <DependentUpon>202107062003336_mig_headingCreatedDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107070629585_mig_abilityAdded.cs" />
+    <Compile Include="Migrations\202107070629585_mig_abilityAdded.designer.cs">
+      <DependentUpon>202107070629585_mig_abilityAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107070632007_mig_abilityKnowledgeLevelAdded.cs" />
+    <Compile Include="Migrations\202107070632007_mig_abilityKnowledgeLevelAdded.designer.cs">
+      <DependentUpon>202107070632007_mig_abilityKnowledgeLevelAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -225,6 +239,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107060653455_mig_adminRoleAdded.resx">
       <DependentUpon>202107060653455_mig_adminRoleAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107062003336_mig_headingCreatedDate.resx">
+      <DependentUpon>202107062003336_mig_headingCreatedDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107070629585_mig_abilityAdded.resx">
+      <DependentUpon>202107070629585_mig_abilityAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107070632007_mig_abilityKnowledgeLevelAdded.resx">
+      <DependentUpon>202107070632007_mig_abilityKnowledgeLevelAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

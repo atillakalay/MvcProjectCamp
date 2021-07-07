@@ -26,6 +26,8 @@ namespace Business.Concrete
             return _headingDal.List();
         }
 
+     
+
         public List<Heading> GetListByWriter(int id)
         {
             return _headingDal.List(x => x.WriterId == id && x.HeadingStatus == true);
@@ -38,6 +40,7 @@ namespace Business.Concrete
 
         public void Add(Heading heading)
         {
+            heading.CreatedDate=DateTime.Now;
             _headingDal.Add(heading);
         }
 

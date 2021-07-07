@@ -37,33 +37,34 @@
         </div><!-- /.container-fluid -->
     </section>
     <!-- Main content -->
-    <section class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <div class="card-title">
-                                Galeri
-                            </div>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <div class="card-title">
+                            Galeri
                         </div>
-                        <div class="card-body">
-                            <div class="row">
-                                @foreach (var item in Model)
-                                {
-                                    <div class="col-sm-2">
-                                        <a href="@item.ImagePath" data-toggle="lightbox" data-title="@item.ImageName" data-gallery="gallery">
-                                            <img src="@item.ImagePath" class="img-fluid mb-2" alt="white sample" />
-                                        </a>
-                                    </div>
-                                }
-                            </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            @foreach (var item in Model)
+                            {
+                                <div class="col-sm-2">
+                                    <a href="@item.ImagePath" data-toggle="lightbox" data-title="@item.ImageName" data-gallery="gallery">
+                                        <img src="@item.ImagePath" class="img-fluid mb-2" alt="white sample" />
+                                    </a>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
             </div>
-        </div><!-- /.container-fluid -->
-    </section>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+<a href="/Gallery/Add/" class="btn btn-info">Yeni Fotoğraf Ekle</a>
     <!-- jQuery -->
     <script src="~/AdminLTE-3.0.4/docs/assets/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap -->

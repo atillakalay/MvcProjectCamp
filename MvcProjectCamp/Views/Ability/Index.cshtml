@@ -43,42 +43,39 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 <body>
     <!-- main -->
-<div class="main">
-    <div class="main-info w3l">
-        <div class="main-row">
-            @foreach (var item in Model)
-            {
-                <!-- main-row-one -->
-                <div class="profile-grid logo wthree">
-                    <img src="@item.ImagePath" style="width: 300px" height="300px">
-                    <h2>@item.FirstName @item.LastName</h2>
-                    <p>@item.AboutShort</p>
+    <div class="main">
+        <div class="main-info w3l">
+            <div class="main-row">
+                @foreach (var item in Model)
+                {
+                    <!-- main-row-one -->
+                    <div class="profile-grid logo wthree">
+                        <img src="@item.ImagePath" style="width: 300px" height="300px">
+                        <h2>@item.FirstName @item.LastName</h2>
+                        <p>@item.AboutShort</p>
 
-                </div>
-                <h3 class="title">Yeteneklerim</h3>
-                <div class="col-md-6 skills-right bar_group">
+                    </div>
+                    <h3 class="title">Yeteneklerim</h3>
+                    <div class="col-md-6 skills-right bar_group">
 
-                    <div class='bar_group__bar thin' label='@item.Skill1 &nbsp;&nbsp; @item.Rate1%' value='@item.Rate1'></div>
-                    <div class='bar_group__bar thin' label='@item.Skill2 &nbsp;&nbsp; @item.Rate2%' value='@item.Rate2'></div>
-                    <div class='bar_group__bar thin' label='@item.Skill3 &nbsp;&nbsp; @item.Rate3%' value='@item.Rate3'></div>
-                    <div class='bar_group__bar thin' label='@item.Skill4 &nbsp;&nbsp; @item.Rate4%' value='@item.Rate4'></div>
-                </div>
-                <a class="btn btn-success" href="/MyAbout/Add/">Ekle</a>
-                <a class="btn btn-success" href="/MyAbout/Update/@item.SkillId">Güncelle</a>
-                <a class="btn btn-success" href="/MyAbout/Delete/@item.SkillId">Sil</a>
-                <!--bar-js-->
-                <script src="../../AdminLTE-3.0.4/MyAbout/js/bars.js"></script>
-                <div class="social-icons agileits">
-                    <ul>
-                        <li><a href="https://www.facebook.com/atilla.kalay74/"></a></li>
-                        <li><a href="https://www.linkedin.com/in/atilla-kalay-0a6274163/" class="be"></a></li>
-                    </ul>
-                </div>
-            }
+                        <div class='bar_group__bar thin' label='@item.Skill1 &nbsp;&nbsp; @item.Rate1%' value='@item.Rate1'></div>
+                        <div class='bar_group__bar thin' label='@item.Skill2 &nbsp;&nbsp; @item.Rate2%' value='@item.Rate2'></div>
+                        <div class='bar_group__bar thin' label='@item.Skill3 &nbsp;&nbsp; @item.Rate3%' value='@item.Rate3'></div>
+                        <div class='bar_group__bar thin' label='@item.Skill4 &nbsp;&nbsp; @item.Rate4%' value='@item.Rate4'></div>
+                    </div>
+                    <!--bar-js-->
+                    <script src="../../AdminLTE-3.0.4/MyAbout/js/bars.js"></script>
+                    <div class="social-icons agileits">
+                        <ul>
+                            <li><a href="https://www.facebook.com/atilla.kalay74/"></a></li>
+                            <li><a href="https://www.linkedin.com/in/atilla-kalay-0a6274163/" class="be"></a></li>
+                        </ul>
+                    </div>
+
+                }
+            </div>
         </div>
     </div>
-</div>
-
 </body>
 </html>
 
