@@ -5,6 +5,7 @@ using System.Web.Mvc;
 using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entity.Concrete;
+using MvcProjectCamp.Models;
 
 namespace MvcProjectCamp.Controllers
 {
@@ -18,6 +19,35 @@ namespace MvcProjectCamp.Controllers
         {
             var result = headingManager.GetAll();
             return View(result);
+        }
+        HeadingManager hm = new HeadingManager(new EfHeadingDal());
+        [HttpGet]
+        public ActionResult IndexByCalender()
+        {
+            return View(new HeadingByCalendar());
+        }
+
+        public JsonResult GetEvents(DateTime start, DateTime end)
+        {
+            var viewModel = new HeadingByCalendar();
+            var events = new List<HeadingByCalendar>();
+            start = DateTime.Today.AddDays(-14);
+            end = DateTime.Today.AddDays(-14);
+
+            foreach (var item in headingManager.GetAll())
+            {
+                events.Add(new HeadingByCalendar()
+                {
+                    title = item.HeadingName,
+                    start = item.HeadingDate,
+                    end = item.HeadingDate.AddDays(-14),
+                    allDay = false
+                });
+
+                start = start.AddDays(7);
+                end = end.AddDays(7);
+            }
+            return Json(events.ToArray(), JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult HeadingReport()
@@ -47,6 +77,8 @@ namespace MvcProjectCamp.Controllers
             return View();
 
         }
+
+
         [HttpPost]
         public ActionResult Add(Heading heading)
         {
