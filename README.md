@@ -36,8 +36,7 @@ Ana sayfada ilk olarak projenin tanıtımı ve hakkımda kısmı bizi karşılı
 - **Projenin Genel Görünümüne Gelecek Olursak;
   ![2](https://github.com/atillakalay/MvcProjectCamp/assets/63123956/86867ce9-813d-4de0-8898-7ceb5a5fc2eb)
 ![3](https://github.com/atillakalay/MvcProjectCamp/assets/63123956/54118443-2345-4a8b-a034-3164b379264b)
-![4](https://github.com/atillakalay/MvcProjectCamp/assets/63123956/5e6ad967-c31f-40ce-![5](https://github.com/atillakalay/MvcProjectCamp/assets/63123956/b5f17a8e-f1bf-4468-83c4-fbe0b3a6abe3)
-8d57-284cd5861d85)
+
 
 
 MvcProjectCamp projemiz, Code First yaklaşımını benimsemektedir ve Murat Yücedağ hocamızın talepleri doğrultusunda güncellenmiştir.
